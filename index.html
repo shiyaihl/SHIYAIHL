@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Türk Dünyası Afiş Sergisi</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --deep-red: #8B1A1A;
+    --crimson-dark: #260505;
+    --ivory: #F5F0E8;
+    --dark: #120303;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  img { max-width: 100%; height: auto; display: block; }
+
+  body {
+    font-family: 'Crimson Text', serif;
+    background: var(--dark);
+    color: var(--ivory);
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(18, 3, 3, 0.98);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+    padding: 0 2rem;
+    display: flex; align-items: center; gap: 0.5rem;
+    overflow-x: auto; height: 56px;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    white-space: nowrap;
+    margin-right: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* HOME */
+  #home {
+    background: radial-gradient(ellipse at 30% 50%, rgba(139,26,26,0.35) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.12) 0%, transparent 50%),
+                var(--dark);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #home::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(139,26,26,0.02) 60px, rgba(139,26,26,0.02) 1px),
+      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(139,26,26,0.02) 60px, rgba(139,26,26,0.02) 1px);
+  }
+
+  .home-ornament {
+    color: var(--gold); font-size: 1.3rem; letter-spacing: 0.8rem;
+    margin-bottom: 1rem; opacity: 0.7; position: relative; z-index: 1;
+  }
+  .home-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900; line-height: 1.05;
+    color: var(--ivory);
+    text-align: center;
+    position: relative; z-index: 1;
+  }
+  .home-title span { color: var(--gold); }
+
+  .home-subtitle {
+    font-size: 1rem; color: rgba(245,240,232,0.6);
+    margin: 0.75rem 0 0.5rem;
+    font-style: italic;
+    position: relative; z-index: 1;
+  }
+
+  .home-desc {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.05rem;
+    color: rgba(201, 168, 76, 0.85);
+    font-style: italic;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin: 0 0 1.5rem;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px;
+    background: rgba(139,26,26,0.08);
+    max-width: 700px;
+    position: relative; z-index: 1;
+  }
+
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.9rem;
+    max-width: 1100px;
+    width: 100%;
+    position: relative; z-index: 1;
+  }
+
+  .home-card {
+    border: 1px solid rgba(201,168,76,0.2);
+    background: rgba(139, 26, 26, 0.08);
+    padding: 1.1rem 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative; overflow: hidden;
+    border-radius: 2px;
+    text-decoration: none;
+    display: block;
+  }
+  .home-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--gold);
+    transition: width 0.3s;
+  }
+  .home-card:hover {
+    background: rgba(139, 26, 26, 0.25);
+    transform: translateY(-4px);
+    border-color: rgba(201,168,76,0.5);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  }
+  .home-card:hover::after { width: 100%; }
+  .home-card:active {
+    transform: scale(0.96) translateY(0);
+    background: rgba(139, 26, 26, 0.5) !important;
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 15px rgba(201, 168, 76, 0.4) !important;
+  }
+
+  .card-num {
+    font-family: 'Cinzel', serif; font-size: 0.65rem;
+    color: var(--gold); letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif; font-size: 0.9rem;
+    line-height: 1.35; color: var(--ivory);
+  }
+
+  /* MUSIC CARD */
+  .music-card {
+    border-color: rgba(201,168,76,0.4) !important;
+    background: rgba(139,26,26,0.25) !important;
+    grid-column: span 1;
+  }
+  .music-card .card-num { color: var(--gold); }
+  .music-card .card-title { color: var(--gold); font-weight: bold; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .home-grid { grid-template-columns: repeat(3, 1fr); }
+    body { height: auto; overflow: auto; }
+    #home { height: auto; min-height: 100vh; overflow: auto; padding-bottom: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .home-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+    .home-desc { font-size: 0.9rem; margin: 0 0 1rem; }
+    #home { padding-top: 5rem; justify-content: flex-start; }
+    .home-ornament { margin-top: 1rem; }
+  }
+  @media (max-width: 400px) {
+    .home-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">⬡ TÜRK DÜNYASI AFİŞ SERGİSİ</div>
+</nav>
+
+<div id="home">
+
+  <div class="home-ornament">✦ ✦ ✦</div>
+  <h1 class="home-title">Türk Dünyası<br><span>Afiş Sergisi</span></h1>
+  <p class="home-subtitle">Dilimiz, Kültürümüz, Birliğimiz</p>
+  <p class="home-desc">Dilimizin Zenginlikleri Kapsamında Şhiy Ailesi Etkinliklerini İçerir.</p>
+
+  <div class="home-grid">
+    <a class="home-card" href="foto1.html">
+      <div class="card-num">AFİŞ 01</div>
+      <div class="card-title">"Kök Bir, Söz Bir, Yurt Bir"</div>
+    </a>
+    <a class="home-card" href="foto3.html">
+      <div class="card-num">AFİŞ 02</div>
+      <div class="card-title">"Dil" Temalı Afiş</div>
+    </a>
+    <a class="home-card" href="foto4.html">
+      <div class="card-num">AFİŞ 03</div>
+      <div class="card-title">"Dilimiz Bir, Köprümüz Bir"</div>
+    </a>
+    <a class="home-card" href="foto5.html">
+      <div class="card-num">AFİŞ 04</div>
+      <div class="card-title">"Dilde Birlik, Fikirde Birlik"</div>
+    </a>
+    <a class="home-card" href="foto6.html">
+      <div class="card-num">AFİŞ 05</div>
+      <div class="card-title">"Dilde Farklı, Anlamda Biriz"</div>
+    </a>
+    <a class="home-card" href="foto7.html">
+      <div class="card-num">AFİŞ 06</div>
+      <div class="card-title">Mehmet Akif Ersoy Temalı Afiş</div>
+    </a>
+    <a class="home-card" href="foto8.html">
+      <div class="card-num">AFİŞ 07</div>
+      <div class="card-title">Ocağına İncir Ağacı Dikmek</div>
+    </a>
+    <a class="home-card" href="foto9.html">
+      <div class="card-num">AFİŞ 08</div>
+      <div class="card-title">Atı Alan Üsküdar'ı Geçti</div>
+    </a>
+    <a class="home-card music-card" href="music.html">
+      <div class="card-num">DİNLETİ</div>
+      <div class="card-title">"Dil Çınarı Şarkısı" 🎵</div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
