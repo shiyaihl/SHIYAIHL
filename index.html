@@ -165,6 +165,25 @@
   .music-card .card-num { color: var(--gold); }
   .music-card .card-title { color: var(--gold); font-weight: bold; }
 
+  /* LOGO ROW */
+  .logo-row {
+    position: absolute;
+    top: 4.5rem;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .home-grid { grid-template-columns: repeat(3, 1fr); }
@@ -187,6 +206,12 @@
 </nav>
 
 <div id="home">
+
+  <div class="logo-row">
+    <img src="turkbayragi.jpeg" alt="Türk Bayrağı" class="logo-img flag-img">
+    <img src="lesokul.jpeg" alt="Okul Logosu" class="logo-img school-img">
+  </div>
+
   <div class="home-ornament">✦ ✦ ✦</div>
   <h1 class="home-title">Türk Dünyası<br><span>Afiş Sergisi</span></h1>
   <p class="home-subtitle">Dilimiz, Kültürümüz, Birliğimiz</p>
