@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFİŞ 06 — Dilde Farklı, Anlamda Biriz | Türk Dünyası Afiş Sergisi</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C; --deep-red: #8B1A1A;
+    --ivory: #F5F0E8; --dark: #120303;
+    --accent: #ff7675; --heading-color: #ffeef0;
+    --frame-color: rgba(255,118,117,0.4);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  img { max-width: 100%; height: auto; display: block; }
+  body { font-family: 'Crimson Text', serif; background: var(--dark); color: var(--ivory); min-height: 100vh; overflow-x: hidden; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(18,3,3,0.98); border-bottom: 1px solid rgba(201,168,76,0.25);
+    padding: 0 2rem; display: flex; align-items: center; height: 56px;
+  }
+  .nav-logo { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold); margin-right: auto; letter-spacing: 0.05em; }
+  .nav-home-btn {
+    background: rgba(139,26,26,0.2); border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.75rem;
+    letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border-radius: 1px;
+    transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center;
+  }
+  .nav-home-btn:hover { background: rgba(139,26,26,0.4); border-color: var(--gold); }
+  .poster-page { min-height: 100vh; padding-top: 56px; display: flex; flex-direction: column; justify-content: space-between; }
+  .poster-hero { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-grow: 1; padding: 4rem 2rem; }
+  .poster-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse at 30% 40%, rgba(139,26,26,0.35) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 70%, rgba(201,168,76,0.08) 0%, transparent 50%),
+                linear-gradient(150deg, #160404 0%, #0a0101 100%);
+  }
+  .poster-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; max-width: 1200px; width: 100%; }
+  .poster-img-wrap { display: flex; justify-content: center; }
+  .poster-img-frame { position: relative; padding: 1rem; width: 100%; max-width: 450px; }
+  .poster-img-frame::before { content: ''; position: absolute; top: -8px; left: -8px; right: 8px; bottom: 8px; border: 1px solid var(--frame-color); pointer-events: none; }
+  .poster-img-frame::after { content: ''; position: absolute; top: 8px; left: 8px; right: -8px; bottom: -8px; border: 1px solid rgba(255,118,117,0.2); pointer-events: none; }
+  .poster-img-frame img { width: 100%; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+  .poster-tag { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 1rem; display: block; }
+  .poster-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 900; line-height: 1.15; margin-bottom: 2rem; color: var(--heading-color); }
+  .poster-divider { width: 60px; height: 2px; background: var(--accent); margin-bottom: 2rem; }
+  .poster-body { font-size: 1.15rem; line-height: 1.85; color: rgba(245,240,232,0.8); }
+  .page-nav { padding: 2rem; display: flex; justify-content: center; border-top: 1px solid rgba(201,168,76,0.15); max-width: 1200px; margin: 0 auto; width: 100%; }
+  .page-nav-btn { background: rgba(139,26,26,0.1); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.1em; padding: 0.7rem 1.5rem; transition: all 0.2s; border-radius: 1px; text-decoration: none; display: inline-block; }
+  .page-nav-btn:hover { background: rgba(139,26,26,0.3); border-color: var(--gold); }
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; }
+    .poster-content { grid-template-columns: 1fr; gap: 2.5rem; }
+    .poster-img-frame::before, .poster-img-frame::after { display: none; }
+    .poster-img-frame { padding: 0; }
+    .poster-hero { padding: 2rem 1rem; }
+    .poster-title { font-size: clamp(1.5rem, 6vw, 2.2rem) !important; margin-bottom: 1.2rem; }
+    .poster-body { font-size: 1rem; line-height: 1.7; }
+    .page-nav { padding: 1.2rem 1rem; }
+    .page-nav-btn { font-size: 0.68rem; padding: 0.55rem 1rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">⬡ TÜRK DÜNYASI AFİŞ SERGİSİ</div>
+  <a class="nav-home-btn" href="index.html">← Ana Sayfaya Dön</a>
+</nav>
+<div class="poster-page">
+  <div class="poster-hero">
+    <div class="poster-bg"></div>
+    <div class="poster-content">
+      <div class="poster-img-wrap">
+        <div class="poster-img-frame">
+          <img src="foto6.jpeg" alt="Dilde Farklı Anlamda Biriz Afişi">
+        </div>
+      </div>
+      <div class="poster-text">
+        <span class="poster-tag">AFİŞ 06 — COĞRAFİ BİRLİK</span>
+        <h2 class="poster-title">"Dilde Farklı,<br>Anlamda<br>Biriz"</h2>
+        <div class="poster-divider"></div>
+        <p class="poster-body">
+          Harita ve bayraklar kullanılarak hazırlanan bu afişte Türk dünyasının farklı coğrafyalarda yaşasa da ortak bir tarih ve kültür etrafında birleştiği anlatılmıştır.
+          <br><br>
+          Öğrenciler, farklı lehçelerin kültürel zenginlik oluşturduğunu ancak ortak hatıraların ve değerlerin toplumları bir arada tuttuğunu vurgulamıştır.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="page-nav">
+    <a class="page-nav-btn" href="index.html">← Ana Sayfaya Dön</a>
+  </div>
+</div>
+</body>
+</html>
